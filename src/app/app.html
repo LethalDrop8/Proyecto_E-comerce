@@ -1,0 +1,46 @@
+<nav class="navbar-panaderia">
+  <div class="nav-container">
+
+    <a routerLink="/" class="nav-logo">
+      °❀⋆.ೃ࿔*:･ Panadería Mágica ･*:.ೃ࿔
+    </a>
+
+    <div class="nav-links">
+      <a routerLink="/catalogo" routerLinkActive="active" class="nav-link">Catálogo</a>
+      <a routerLink="/carrito" routerLinkActive="active" class="nav-link">Carrito</a>
+
+      <a routerLink="/inventario" routerLinkActive="active" class="nav-link"> Inventario </a>
+
+      <button class="nav-link btn-docs" (click)="abrirDocumentos()">
+        Documentos
+      </button>
+    </div>
+
+    <div class="user-dropdown dropdown">
+      <button class="user-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+        <i class="bi bi-person-circle"></i>
+      </button>
+
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" routerLink="/perfil">
+          Modificar datos
+        </a></li>
+        <li><a class="dropdown-item" routerLink="/mis-pedidos">
+          Mis pedidos
+        </a></li>
+       
+          <button class="dropdown-item text-danger" (click)="cerrarSesion()">
+            Cerrar sesión
+          </button>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
+
+<app-carrito-indicador></app-carrito-indicador>

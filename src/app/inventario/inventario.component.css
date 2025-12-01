@@ -1,0 +1,162 @@
+body {
+  background: linear-gradient(135deg, #1b1b2f, #1f1f3d, #2a2a4d);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #000000;
+}
+
+.titulo-principal {
+  text-align: center;
+  color: #f8d57e;
+  padding: 25px 0;
+  text-shadow: 0 0 6px rgba(248, 213, 126, 0.4);
+  font-size: 32px;
+}
+
+/* Layout general */
+.layout {
+  display: flex;
+  max-width: 1300px;
+  margin: 0 auto;
+  gap: 30px;
+  padding: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 10px;
+}
+
+.sidebar button {
+  background-color: #c08429;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.sidebar button:hover {
+  background-color: #a76c1f;
+  transform: translateX(4px);
+}
+
+/* Contenido principal */
+.contenido {
+  flex: 1;
+}
+
+/******** FORMULARIOS ********/
+.form {
+  background: rgba(255,255,255,0.07);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.25);
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form input {
+  padding: 12px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 8px;
+  color: rgb(0, 0, 0);
+}
+
+.form input:focus {
+  border-color: #f8d57e;
+}
+
+.form button {
+  background-color: #3498db;
+}
+
+.form button:hover {
+  background-color: #2980b9;
+}
+
+/******** PRODUCTOS ********/
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+.producto {
+  background: rgba(255,255,255,0.08);
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.35);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.producto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.55);
+}
+
+.producto img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #f8d57e;
+}
+
+.producto h3 {
+  margin: 12px 0 5px;
+  color: #f8d57e;
+}
+
+.producto p {
+  color: #dadada;
+  margin-bottom: 6px;
+}
+
+.descripcion {
+  opacity: 0.85;
+}
+
+/* Botones dentro de tarjeta */
+.acciones {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.acciones button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.editar {
+  background-color: #f1c40f;
+}
+
+.editar:hover {
+  background-color: #d4ac0d;
+}
+
+.eliminar {
+  background-color: #e74c3c;
+}
+
+.eliminar:hover {
+  background-color: #c0392b;
+}
+
+/******** Vista previa ********/
+.preview img {
+  max-width: 180px;
+  border-radius: 10px;
+  border: 2px solid #f8d57e;
+  margin-top: 10px;
+}

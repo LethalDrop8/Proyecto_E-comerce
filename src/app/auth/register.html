@@ -1,0 +1,62 @@
+<div class="auth-container">
+  <h2>Crear cuenta</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <label>
+      Correo
+      <input
+        type="email"
+        [(ngModel)]="form.correo"
+        name="correo"
+        required
+      />
+    </label>
+
+    <label>
+      Nombre de usuario
+      <input
+        type="text"
+        [(ngModel)]="form.nombre_usuario"
+        name="nombre_usuario"
+        required
+        minlength="1"
+        maxlength="15"
+      />
+    </label>
+
+    <label>
+      Contraseña
+      <input
+        type="password"
+        [(ngModel)]="form.contrasena"
+        name="contrasena"
+        required
+        minlength="8"
+        maxlength="20"
+      />
+    </label>
+
+    <label>
+      Confirmar contraseña
+      <input
+        type="password"
+        [(ngModel)]="form.confirmarContrasena"
+        name="confirmarContrasena"
+        required
+        minlength="8"
+        maxlength="20"
+      />
+    </label>
+
+    <button type="submit" [disabled]="loading">
+      {{ loading ? 'Creando cuenta...' : 'Crear cuenta' }}
+    </button>
+
+    <a routerLink="/login" class="link-forgot">
+      ¿Ya tienes cuenta? Inicia sesión
+    </a>
+
+    <p *ngIf="error" class="error">{{ error }}</p>
+    <p *ngIf="mensaje" class="ok">{{ mensaje }}</p>
+  </form>
+</div>

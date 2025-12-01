@@ -1,0 +1,56 @@
+<h2 class="titulo-principal">Gestión de Inventario</h2>
+
+<div class="layout">
+
+  <!-- Botones verticales -->
+  <div class="sidebar">
+
+  </div>
+
+  <div class="contenido">
+
+    <!-- Formulario agregar -->
+    <div class="form">
+      <h3>Agregar Nuevo Producto</h3>
+      <input type="text" [(ngModel)]="nuevoProducto.nombre" placeholder="Nombre del producto">
+      <input type="number" [(ngModel)]="nuevoProducto.precio" placeholder="Precio">
+      <input type="text" [(ngModel)]="nuevoProducto.descripcion" placeholder="Descripción">
+      <input type="number" [(ngModel)]="nuevoProducto.stock" placeholder="Cantidad">
+      <input type="text" [(ngModel)]="nuevoProducto.imagen" placeholder="URL de imagen">
+      <button (click)="agregarProducto()">Agregar Producto</button>
+    </div>
+
+    <!-- Lista de productos -->
+    <div class="productos">
+      <div *ngFor="let producto of productos" class="producto">
+        <img [src]="producto.imagen" alt="Imagen de producto">
+        <h3>{{ producto.nombre }}</h3>
+        <p><strong>Precio:</strong> ${{ producto.precio }}</p>
+        <p class="descripcion">{{ producto.descripcion }}</p>
+        <p><strong>Cantidad:</strong> {{ producto.stock }}</p>
+        <div class="acciones">
+          <button class="editar" (click)="seleccionarProducto(producto)">Editar</button>
+          <button class="eliminar" (click)="eliminarProducto(producto.id)">Eliminar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulario edición -->
+    <div *ngIf="modoEdicion && productoSeleccionado" class="form">
+      <h3>Editar Producto</h3>
+      <input type="text" [(ngModel)]="productoSeleccionado.nombre" placeholder="Nombre del producto">
+      <input type="number" [(ngModel)]="productoSeleccionado.precio" placeholder="Precio">
+      <input type="text" [(ngModel)]="productoSeleccionado.descripcion" placeholder="Descripción">
+      <input type="number" [(ngModel)]="productoSeleccionado.stock" placeholder="Cantidad">
+      <input type="text" [(ngModel)]="productoSeleccionado.imagen" placeholder="URL de imagen">
+
+      <div class="preview" *ngIf="productoSeleccionado.imagen">
+        <img [src]="productoSeleccionado.imagen" alt="Vista previa">
+      </div>
+
+      <button (click)="actualizarProducto()">Guardar Cambios</button>
+      <button (click)="cancelarEdicion()">Cancelar</button>
+    </div>
+
+  </div>
+</div>
